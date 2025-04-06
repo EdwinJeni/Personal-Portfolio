@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Full Stack Developer Skills</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: rgb(47, 57, 65);
+            
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            color: white;
+            font-size: 25px;
+        }
+        .category {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .skill {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MY SKILLS</h1>
+        
+        <div class="category">
+            <h2>Frontend</h2>
+            <div id="frontend"></div>
+        </div>
+        
+        <div class="category">
+            <h2>Backend</h2>
+            <div id="backend"></div>
+        </div>
+        
+        <div class="category">
+            <h2>Tools</h2>
+            <div id="tools"></div>
+        </div>
+    </div>
+
+    <script>
+        const skills = {
+            frontend: ["React.js","HTML", "CSS", "JavaScript", "Bootstrap","Jquery"],
+            backend: ["Java", "Spring Boot", "REST API", "Microservices","MySql","Nosql"],
+            tools: ["Eclipse","Visual Studio","NetBeans", "Maven"]
+        };
+        
+        function displaySkills(category, elementId) {
+            const container = document.getElementById(elementId);
+            skills[category].forEach(skill => {
+                const skillElement = document.createElement("span");
+                skillElement.classList.add("skill");
+                skillElement.textContent = skill;
+                container.appendChild(skillElement);
+            });
+        }
+        
+        displaySkills("frontend", "frontend");
+        displaySkills("backend", "backend");
+        displaySkills("tools", "tools");
+    </script>
+</body>
+</html>

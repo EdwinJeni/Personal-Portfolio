@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+        }
+        
+        .navbarss {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: black;
+            padding: 15px;
+            color: white;
+        }
+        
+        .navbarss .logoss {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-linkss {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-linkss li {
+            margin: 0 15px;
+        }
+        
+        .nav-linkss a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        
+        .nav-linkss a:hover {
+            color: green;
+            font-weight: 40%;
+            font-size: 30px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background: white;
+            margin: 5px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .nav-linkss {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: black;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-linkss li {
+                padding: 15px 0;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbarss">
+        <div class="logoss">MySite</div>
+        <ul class="nav-linkss">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+    
+    <script>
+        function toggleMenu() {
+            const navLinkss = document.querySelector('.nav-linkss');
+            navLinkss.style.display = navLinkss.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>
